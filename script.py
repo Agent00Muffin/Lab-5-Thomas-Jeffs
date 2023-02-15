@@ -1,5 +1,6 @@
 from pastebin_api import post_new_paste
 from dad_jokes_api import search_for_dad_jokes
+import sys
 
 def main():
     search_term = get_search_term()
@@ -7,6 +8,7 @@ def main():
     if joke_list:
         title, body_text = get_paste_data(joke_list, search_term)
         paste_url = post_new_paste(title, body_text, '1D')
+        print(f'URL of the new paste {paste_url}')
 
 
 
@@ -15,11 +17,22 @@ def main():
     return
 
 def get_search_term():
-    return
+    num_params = len(sys.argv) - 1
+    if num_params > 0:
+        return sys.argv[1]
+    else:
+        print("Error: Missing search term")
+        sys-exit(1)
 
 
 def get_paste_data(joke_list, search_term):
-    return #title, body_text
+
+    title = f'Dad Jokes That Contain The Word "{search_term}"'
+
+    divider = '\n' + ('*' * 40) + '\n'
+    body_text = divider.join(joke_list)
+
+    return title, body_text
 
 if __name__=='__main__':
     main()
