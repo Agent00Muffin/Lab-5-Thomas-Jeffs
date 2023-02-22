@@ -32,7 +32,7 @@ def post_new_paste(title, body_text, expiration='10M', listed=False):
     }
 
     # Semd the POAT request to the PasteBin API
-    print('Sending POST request to PAsteBin API...', end='')
+    print('Sending POST request to PasteBin API...', end='')
     resp_msg = requests.post(PASTEBIN_API_URL, data=paste_params)
 
     # Check wether the POST request was successful

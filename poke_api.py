@@ -8,13 +8,19 @@ def main():
 
 
 def search_for_pokemon(pokemon):
-    poke_api_url = f'https://pokeapi.co/api/v2/pokemon/{pokemon}'
-    poke_list = requests.get(poke_api_url)
-    return poke_list
 
+    clean_name = str(pokemon).strip().lower()
+    poke_api_url = f'https://pokeapi.co/api/v2/pokemon/{clean_name}'
+    print(f'Getting information for {clean_name}...', end='')
+    resp_msg = requests.get(poke_api_url)
 
+    if resp_msg.ok:
+        print('success')
+        poke_data = resp_msg.json()
+        return poke_data
+    else:
+        print('Failure')
+        print(f'Response code: {resp_msg.status_code} ({resp_msg.reason})')
 
-
-   
 if __name__=='__main__':
     main()

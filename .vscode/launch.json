@@ -8,10 +8,10 @@
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
-            "program": "script.py",
+            "program": "Lab5.py",
             "console": "integratedTerminal",
             "justMyCode": true,
-            "args": ["Dogs"]
+            "args": "ditto"
         }
     ]
 }
