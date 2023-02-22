@@ -57,7 +57,7 @@ def get_random_dad_joke():
 
     }
     
-    # Semd the GET request to the Dad Jokes API
+    # Send the GET request to the Dad Jokes API
     print('Sending GET request to Dad Jokes API...', end='')
     resp_msg = requests.get(DAD_JOKES_API_URL, headers=header_params)
 

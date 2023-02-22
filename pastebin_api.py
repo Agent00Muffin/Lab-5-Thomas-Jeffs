@@ -40,7 +40,7 @@ def post_new_paste(title, body_text, expiration='10M', listed=False):
         print('success')
         return resp_msg.text
     else:
-        print('Failed')
+        print('None')
         print(f'Status code: {resp_msg.status_code} ({resp_msg.reason})')
         print(f'Reason: {resp_msg.text}')
         
