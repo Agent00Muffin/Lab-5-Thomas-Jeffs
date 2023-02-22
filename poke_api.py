@@ -8,6 +8,14 @@ def main():
 
 
 def search_for_pokemon(pokemon):
+    """Gather information on the pokemon wanting to be searched
+
+    Args:
+        pokemon(str): Pokemon name
+
+    Returns:
+        List: list of information on said pokemon
+    """
 
     clean_name = str(pokemon).strip().lower()
     poke_api_url = f'https://pokeapi.co/api/v2/pokemon/{clean_name}'
